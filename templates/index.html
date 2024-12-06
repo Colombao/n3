@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}{{_('Página Inicial')}}{% endblock %}
+{% block content %}
+<div
+  class="card shadow-sm p-4"
+  style="background-color: #ccffcc; border: 5px solid #ff00ff"
+>
+  <h1
+    class="mb-3"
+    style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #ff0000"
+  >
+    {{ _('Bem-vindo à aplicação') }}
+  </h1>
+  {% if user %}
+  <p style="font-size: 20px; color: #0000ff">
+    {{ _('Logado como') }}: <strong>{{ user.name }} ({{ user.role }})</strong>
+  </p>
+  <p style="font-size: 18px; color: #00ff00">
+    {{ _('Agora você pode navegar usando o menu acima!') }}
+  </p>
+  {% else %}
+  <p style="font-size: 20px; color: #0000ff">
+    {{ _('Você não está logado.') }}
+  </p>
+  <p style="font-size: 18px; color: #00ff00">
+    {{ _('Use o menu acima para logar como admin ou usuário.') }}
+  </p>
+  {% endif %}
+</div>
+{% endblock %}
